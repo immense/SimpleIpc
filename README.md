@@ -7,7 +7,7 @@ NuGet: https://www.nuget.org/packages/immense.SimpleIpc/
 ## Quick Start
 
 With Dependency Injection:
-```
+```C#
 var serviceCollection = new ServiceCollection();
 serviceCollection.AddSimpleIpc();
 var provider = serviceCollection.BuildServiceProvider();
@@ -17,13 +17,13 @@ var connectionFactory = provider.GetRequiredService<IConnectionFactory>();
 ```
 
 Without Dependency Injection:
-```
+```C#
 var router = SimpleIpc.Router.Default;
 var connectionFactory = SimpleIpc.ConnectionFactory.Default;
 ```
 
 Then:
-```
+```C#
 var pipeName = Guid.NewGuid().ToString();
 
 // The Router can be used to retrieve server instances elsewhere in code.
